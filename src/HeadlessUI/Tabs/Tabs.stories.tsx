@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react'
 
-import { Tabs, TabsHeader, TabsHeaders, TabsPanel } from './Tabs';
+import { TabsH, TabsHHeader, TabsHHeaders, TabsHPanel, TabsHPanels } from './Tabs';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Radix/Tabs',
-  component: Tabs,
+  title: 'HeadlessUI/Tabs',
+  component: TabsH,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     // layout: 'centered',
     docs: {
       description: {
-        component: 'Tabs component based on the Radix UI Tabs component: https://radix-ui.com/primitives/docs/components/tabs'
+        component: 'Tabs component based on the Headless UI Tabs component: https://headlessui.dev/react/tabs'
       },
     },
   },
@@ -22,7 +22,7 @@ const meta = {
   // argTypes: {
   //   value: { control: 'radio', options: ['tab1', 'tab2'] },
   // },
-} satisfies Meta<typeof Tabs>;
+} satisfies Meta<typeof TabsH>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -30,16 +30,18 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Plain = () => {
   return (
-    <Tabs defaultValue="tab1">
-      <TabsHeaders>
-        <TabsHeader value="tab1">Tab 1</TabsHeader>
-        <TabsHeader value="tab2">Tab 2</TabsHeader>
-        <TabsHeader value="tab3" disabled>Tab 3</TabsHeader>
-      </TabsHeaders>
-      <TabsPanel value="tab1">Tab 1 Content</TabsPanel>
-      <TabsPanel value="tab2">Tab 2 Content</TabsPanel>
-      <TabsPanel value="tab3">Tab 3 Content</TabsPanel>
-    </Tabs>
+    <TabsH as="div">
+      <TabsHHeaders>
+        <TabsHHeader>Tab 1</TabsHHeader>
+        <TabsHHeader>Tab 2</TabsHHeader>
+        <TabsHHeader disabled>Tab 3</TabsHHeader>
+      </TabsHHeaders>
+      <TabsHPanels>
+        <TabsHPanel>Tab 1 Content</TabsHPanel>
+        <TabsHPanel>Tab 2 Content</TabsHPanel>
+        <TabsHPanel>Tab 3 Content</TabsHPanel>
+      </TabsHPanels>
+    </TabsH>
   )
 };
 
