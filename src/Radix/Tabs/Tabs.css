@@ -1,0 +1,46 @@
+/* reset */
+button {
+  all: unset;
+}
+
+.TabsRoot {
+  display: flex;
+  flex-direction: column;
+}
+
+.TabsList {
+  flex-shrink: 0;
+  display: flex;
+	border-bottom: 1px solid #c9dfe8;
+}
+
+.TabsTrigger {
+  font-weight: 600;
+  font-size: 16px;
+	font-family: sans-serif;
+  text-transform: uppercase;
+
+  height: 64px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #668a99;
+  user-select: none;
+	cursor: pointer;
+}
+
+.TabsTrigger:hover, .TabsTrigger:focus {
+  background-color: #f9fafa;
+}
+
+.TabsTrigger[data-state='active'] {
+	color: #1d4153;
+  box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;
+}
+
+.TabsContent {
+  flex-grow: 1;
+  padding: 20px;
+}
+
